@@ -1,7 +1,7 @@
 import React,{ Component,useState } from 'react';
 import { View, Text, StyleSheet,TextInput,Image,TouchableHighlight,ImageBackground ,} from 'react-native';
 
-import SelectDropdown from 'react-native-select-dropdown'
+
 
 
 export default class StudentDetails extends Component  {

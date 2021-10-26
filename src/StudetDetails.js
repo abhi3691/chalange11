@@ -1,16 +1,34 @@
-import React,{ Component,useState } from 'react';
-import { View, Text, StyleSheet,TextInput,Image,TouchableHighlight,ImageBackground ,} from 'react-native';
+import React,{ Component } from 'react';
+import { View, Text, StyleSheet,TextInput,Image,TouchableHighlight,ImageBackground } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
 
 
 
 export default class StudentDetails extends Component  {
+  constructor(){
+    super();
+    this.state ={
+      selectedLabel :'',
+     flag:false,
+     
+  
+  };
+    
+  }
+ Show =(value) =>{
+   if(value !== 'disabled'){
+   this.setState({
+    flag :true,
+    selectedLabel :value,
+   
  
- 
+  });
+}
+ }
   render(){ 
    
-  
+    
     
   return (
       
@@ -42,58 +60,66 @@ export default class StudentDetails extends Component  {
                
                 <TextInput style={styles.inputTextStyle} keyboardType='name-phone-pad' placeholder='Full name' placeholderTextColor='#446270'  ></TextInput>
                 <TextInput style={styles.inputTextStyle} keyboardType= 'email-address' placeholder='Email' placeholderTextColor='#446270' ></TextInput>
-               <Picker style={styles.inputTextStyle} 
-            
-               >
+              
+               <Picker style={[styles.inputTextStyle2,{ color: this.state.flag ? "#fff" : "#446270" }]}
+               
+               selectedValue ={this.state.selectedLabel}
+              onValueChange ={this.Show.bind()}
+              mode='dropdown' 
+              dropdownIconColor ='#446270'
+              
+              >
                  
-                 <Picker.Item   label="Assam" value = "Assam" />
+                 <Picker.Item label="Select state" value = "disabled" style ={{color:'#446270'}} />
+                 <Picker.Item label="Assam" value = "Assam"   />
                  <Picker.Item label="Goa" value = "Goa" />
                  <Picker.Item label="Madhya Pradesh" value = "Madhya Pradesh" />
                  <Picker.Item label="Meghalaya" value = "Meghalaya" />
-                 <Picker.Item label="Mizoram" value = "Mizoram" />
-                 <Picker.Item label="Delhi" value = "Delhi" />
-                 <Picker.Item label="Sikkim" value = "Sikkim" />
-                 <Picker.Item label="Andhra Pradesh" value = "Andhra Pradesh" />
-                 <Picker.Item label="Arunachal Pradesh" value = "Arunachal Pradesh" />
-                 <Picker.Item label="Bihar" value = "Bihar" />
-                 <Picker.Item label="Chhattisgarh" value = "Chhattisgarh" />
-                 <Picker.Item label="Gujarat" value = "Gujarat" />
-                 <Picker.Item label="Haryana" value = "Haryana" />
-                <Picker.Item label="Himachal Pradesh" value = "Himachal Pradesh" />
-                <Picker.Item label="Jammu and Kashmir" value = "Jammu and Kashmir" />
-                <Picker.Item label="Himachal Pradesh" value = "Himachal Pradesh" />
-                <Picker.Item label="Jharkhand" value = "Jharkhand" />
-                <Picker.Item label="Karnataka" value = "Karnataka" />
-                <Picker.Item label="Kerala" value = "Kerala" />
-                <Picker.Item label="Maharashtra" value = "Maharashtra" />
-                <Picker.Item label="Nagaland" value = "Nagaland" />
+                 <Picker.Item label="Mizoram" value = "Mizoram"  />
+                 <Picker.Item label="Delhi" value = "Delhi"  />
+                 <Picker.Item label="Sikkim" value = "Sikkim"  />
+                 <Picker.Item label="Andhra Pradesh" value = "Andhra Pradesh"  />
+                 {/* <Picker.Item label="Arunachal Pradesh" value = "Arunachal Pradesh" /> */}
+                 {/* <Picker.Item label="Bihar" value = "Bihar"  /> */}
+                 {/* <Picker.Item label="Chhattisgarh" value = "Chhattisgarh"  /> */}
+                 {/* <Picker.Item label="Gujarat" value = "Gujarat"  />
+                 <Picker.Item label="Haryana" value = "Haryana" /> */}
+                {/* <Picker.Item label="Himachal Pradesh" value = "Himachal Pradesh" />
+                <Picker.Item label="Jammu and Kashmir" value = "Jammu and Kashmir"  /> */}
+                {/* <Picker.Item label="Himachal Pradesh" value = "Himachal Pradesh" />
+                <Picker.Item label="Jharkhand" value = "Jharkhand"  /> */}
+                <Picker.Item label="Karnataka" value = "Karnataka"/>
+                <Picker.Item label="Kerala" value = "Kerala"  />
+                {/* <Picker.Item label="Maharashtra" value = "Maharashtra" />
+                <Picker.Item label="Nagaland" value = "Nagaland"  />
                 <Picker.Item label="Odisha" value = "Odisha" />
-                <Picker.Item label="Punjab" value = "Punjab" />
+                <Picker.Item label="Punjab" value = "Punjab"  />
                 <Picker.Item label="Odisha" value = "Odisha" />
-                <Picker.Item label="Rajasthan" value = "Rajasthan" />
-                <Picker.Item label="Tamil Nad" value = "Tamil Nad" />
+                <Picker.Item label="Rajasthan" value = "Rajasthan"  />
+                <Picker.Item label="Tamil Nad" value = "Tamil Nad"  />
                 <Picker.Item label="Uttarakhand" value = "Uttarakhand" />
-                <Picker.Item label="Telangana" value = "Telangana" />
-                <Picker.Item label="Tripura" value = "Tripura" />
-                <Picker.Item label="Telangana" value = "Telangana" />
-                <Picker.Item label="Andaman and Nicobar Islands" value = "Andaman and Nicobar Islands" />
-                <Picker.Item label="Chandigarh" value = "Chandigarh" />
+                <Picker.Item label="Telangana" value = "Telangana"  />
+                <Picker.Item label="Tripura" value = "Tripura"  />
+                <Picker.Item label="Telangana" value = "Telangana"  />
+                <Picker.Item label="Andaman and Nicobar Islands" value = "Andaman and Nicobar Islands"  />
+                <Picker.Item label="Chandigarh" value = "Chandigarh"  />
                 <Picker.Item label="Dadra and Nagar Haveli" value = "Dadra and Nagar Haveli" />
                 <Picker.Item label="Daman and Di" value = "Daman and Di" />
-                <Picker.Item label="Lakshadweep" value = "Lakshadweep" />
+                <Picker.Item label="Lakshadweep" value = "Lakshadweep"  />
                 <Picker.Item label="Puducherry" value = "Puducherry" />
                 <Picker.Item label="Uttar Pradesh" value = "Uttar Pradesh" />
-                <Picker.Item label="West Bengal" value = "West Bengal" />
-
+                <Picker.Item label="West Bengal" value = "West Bengal"  /> */}
+               
                </Picker>
+             
                <TextInput style={styles.inputTextStyle} keyboardType='number-pad' placeholder='Pin Code' placeholderTextColor='#446270'  ></TextInput>
-           
+               
 
               
             </View>
             <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
                 <View style={{width:'100%',alignItems:'center',justifyContent:'center'}}>
-            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('OTP') } >
+            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('StudentDetails') } >
                     <Text style={{color:'#fff',fontSize:18,alignItems:'center'}}>Register</Text>
                 </TouchableHighlight>
           
@@ -165,10 +191,32 @@ const styles = StyleSheet.create({
     elevation:4,
     fontSize:20,
     marginRight:10,
-    color:'#fff',
+    color:'#fff'
+    
     
   },
 
+      inputTextStyle2:{
+        backgroundColor:'#062E40',
+        alignItems:'center',
+       paddingLeft:20,
+        justifyContent:'center',
+        borderWidth:1,
+        width:'90%',
+        marginTop:20,
+        height:50,
+        borderRadius:4,
+        borderColor:'#13394A',
+        elevation:4,
+        fontSize:20,
+        marginRight:10,
+        
+        
+    
+    
+    
+   
+  },
   ButtonStyle:{
       backgroundColor:'#00C458',
       borderRadius:4,

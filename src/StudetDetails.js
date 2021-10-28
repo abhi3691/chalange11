@@ -119,7 +119,7 @@ export default class StudentDetails extends Component  {
             </View>
             <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
                 <View style={{width:'100%',alignItems:'center',justifyContent:'center'}}>
-            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('StudentDetails') } >
+            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('School_Board') } >
                     <Text style={{color:'#fff',fontSize:18,alignItems:'center'}}>Register</Text>
                 </TouchableHighlight>
           

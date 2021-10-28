@@ -1,21 +1,25 @@
-import React,{ Component } from 'react';
+import React,{ useRef,useState } from 'react';
 import { View, Text, StyleSheet,TextInput,Image,TouchableHighlight,ImageBackground } from 'react-native';
 
-class FlexContent extends Component {
-  render (){
-      return(
-          <View style ={{flexDirection:'row',alignItems:'center',justifyContent:'center'}} >
-            <Text style={{fontSize:18,color:'#002333',fontFamily:'Gilroy-Regular',fontWeight:'900',marginTop:30}} > +91 {this.props.mobileNo} </Text>
-            
-              
-          </View>
-      )
-  }
-}
 
+const OTP =(
+  {route :{
+    params :{userMobileNo},
+    
+  },
+  navigation
+},
 
-export default class OTP extends Component  {
-  render(){ 
+)=>{
+
+  const firstInput  = useRef();
+  const secondInput = useRef();
+  const thirdInput  = useRef();
+  const fourthInput = useRef();
+  const fifthInput  = useRef();
+  const sixthInput  = useRef();
+  const [otp, setOtp] = useState({1: '', 2: '', 3: '', 4: '',5:'',6:''});
+ 
   return (
     <View style={styles.container}>
         <View style={{height:'25%',alignItems:'center',justifyContent:'center',marginTop:30}}>
@@ -36,10 +40,11 @@ export default class OTP extends Component  {
         <View style={{alignItems:'center',justifyContent:'center'}}>
         <Text style={styles.enterMobileNoStyle} >Verification code</Text>
          <Text style={{fontSize:14,color:'#9F9F9F',fontFamily:'Gilroy-Regular'}} >Please type the verification code sent to</Text>
-         <FlexContent
-         mobileNo= {this.props.route.params.userMobileNo}
-         
-         />  
+         <View style ={{flexDirection:'row',alignItems:'center',justifyContent:'center'}} >
+            <Text style={{fontSize:18,color:'#002333',fontFamily:'Gilroy-Regular',fontWeight:'900',marginTop:30}} > +91 {userMobileNo} </Text>
+            
+              
+          </View> 
         </View>
         </View>
         
@@ -47,18 +52,77 @@ export default class OTP extends Component  {
         <View style={styles.rectangle1}>
             <View style={styles.mobileNoStyle} >
                
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
-                <TextInput style={styles.OTPTextStyle} keyboardType='number-pad' maxLength={1} ></TextInput>
+                <TextInput style={styles.OTPTextStyle}
+                 keyboardType='number-pad'
+                  maxLength={1}
+                   ref ={firstInput}
+                   onChangeText={text => {
+                    setOtp({...otp, 1: text});
+                    text && secondInput.current.focus();
+                  }}
+                
+                ></TextInput>
+                <TextInput 
+                style={styles.OTPTextStyle}
+                 keyboardType='number-pad'
+                  maxLength={1} 
+                  ref={secondInput} 
+                  onChangeText={text => {
+                    setOtp({...otp, 2: text});
+                    text ? thirdInput.current.focus() : firstInput.current.focus();
+                  }}
+                  ></TextInput>
+                <TextInput 
+                style={styles.OTPTextStyle}
+                 keyboardType='number-pad'
+                  maxLength={1} 
+                  ref ={thirdInput} 
+                  onChangeText={text => {
+                    setOtp({...otp, 3: text});
+                    text ? fourthInput.current.focus() : secondInput.current.focus();
+                  }}
+                  >
+                   
+                  </TextInput>
+                <TextInput
+                 style={styles.OTPTextStyle}
+                  keyboardType='number-pad'
+                   maxLength={1}
+                    ref ={fourthInput}
+                    onChangeText={text => {
+                      setOtp({...otp, 4: text});
+                      text ? fifthInput.current.focus() : thirdInput.current.focus();
+                    }}
+                     >
+
+                     </TextInput>
+                <TextInput
+                 style={styles.OTPTextStyle}
+                  keyboardType='number-pad'
+                   maxLength={1}
+                    ref ={fifthInput}
+                    onChangeText={text => {
+                      setOtp({...otp, 5: text});
+                      text ? sixthInput.current.focus() : fourthInput.current.focus();
+                    }}
+                    >
+
+                    </TextInput>
+                <TextInput
+                 style={styles.OTPTextStyle}
+                  keyboardType='number-pad' maxLength={1}
+                   ref={sixthInput}
+                   onChangeText={text => {
+                    setOtp({...otp, 6: text});
+                    !text && fifthInput.current.focus();
+                  }}
+                   ></TextInput>
 
               
             </View>
             <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
                 <View style={{width:'100%',alignItems:'center',justifyContent:'center'}}>
-            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('StudentDetails') } >
+            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> navigation.navigate('StudentDetails') } >
                     <Text style={{color:'#fff',fontSize:18,alignItems:'center'}}>Resend OTP</Text>
                 </TouchableHighlight>
                 <Text style={{color:'#446270',fontSize:14}} >Resend after 28s</Text>
@@ -74,7 +138,7 @@ export default class OTP extends Component  {
     </View>
   )
 }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -150,3 +214,5 @@ const styles = StyleSheet.create({
   }
 
 })
+
+export default OTP;

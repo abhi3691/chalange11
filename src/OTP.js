@@ -5,6 +5,7 @@ import { View, Text, StyleSheet,TextInput,Image,TouchableHighlight,ImageBackgrou
 const OTP =(
   {route :{
     params :{userMobileNo},
+    params:{userCountryCode}
     
   },
   navigation
@@ -41,7 +42,7 @@ const OTP =(
         <Text style={styles.enterMobileNoStyle} >Verification code</Text>
          <Text style={{fontSize:14,color:'#9F9F9F',fontFamily:'Gilroy-Regular'}} >Please type the verification code sent to</Text>
          <View style ={{flexDirection:'row',alignItems:'center',justifyContent:'center'}} >
-            <Text style={{fontSize:18,color:'#002333',fontFamily:'Gilroy-Regular',fontWeight:'900',marginTop:30}} > +91 {userMobileNo} </Text>
+            <Text style={{fontSize:18,color:'#002333',fontFamily:'Gilroy-Regular',fontWeight:'900',marginTop:30}} > {userCountryCode}  {userMobileNo} </Text>
             
               
           </View> 

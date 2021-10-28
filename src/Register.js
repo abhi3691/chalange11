@@ -7,15 +7,20 @@ export default class Register extends Component  {
   constructor(){
     super();
     this.state ={
-      
-      mobileNo : null
+      countryCode :'+91',
+      mobileNo : ''
     }
   }
 
   UpdateValue(userMobileNo){
     this.setState({mobileNo : userMobileNo})
-    
+   
   }
+  UpdateValue2(userCountryCode){
+    
+    this.setState({countryCode : userCountryCode})
+  }
+
   render(){ 
   return (
     <View style={styles.container}>
@@ -33,14 +38,17 @@ export default class Register extends Component  {
         <View style={styles.rectangle1}>
             <View style={styles.mobileNoStyle} >
                
-                <TextInput style={styles.CountryText}   > +91</TextInput>
+                <TextInput style={styles.CountryText} 
+               
+                onChangeText={(userCountryCode) => this.UpdateValue2(userCountryCode) } defaultValue ='+91'
+                > </TextInput>
                 <TextInput style={styles.mobileText} placeholder='Mobile number' placeholderTextColor='#446270' keyboardType='phone-pad' 
                 onChangeText={(userMobileNo) => this.UpdateValue(userMobileNo) }
                 ></TextInput>
               
             </View>
             <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
-            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('OTP',{userMobileNo:this.state.mobileNo}) } >
+            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('OTP',{userMobileNo:this.state.mobileNo,userCountryCode:this.state.countryCode}) } >
                     <Text style={{color:'#fff',fontSize:18,alignItems:'center'}} >Continue</Text>
                 </TouchableHighlight>
             </View>

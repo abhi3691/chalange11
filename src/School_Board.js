@@ -111,7 +111,7 @@ export default class School_Board extends Component  {
             </View>
             <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
                 <View style={{width:'100%',alignItems:'center',justifyContent:'center'}}>
-            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('StudentDetails') } >
+            <TouchableHighlight style={styles.ButtonStyle} onPress ={()=> this.props.navigation.navigate('AppTour') } >
                     <Text style={{color:'#fff',fontSize:18,alignItems:'center'}}>Continue</Text>
                 </TouchableHighlight>
           

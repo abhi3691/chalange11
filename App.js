@@ -4,6 +4,8 @@ import Register from './src/Register'
 import OTP     from './src/OTP'
 import StudentDetails from './src/StudetDetails'
 import School_Board from './src/School_Board'
+import AppTour from './src/AppTour'
+
 import { NavigationContainer } from '@react-navigation/native'
 
 import { createStackNavigator } from '@react-navigation/stack'
@@ -39,6 +41,13 @@ function MyStack (){
   component={School_Board}
   options ={{headerShown:false}}
   />
+
+<Stack.Screen 
+  name ='AppTour'
+  component={AppTour}
+  options ={{headerShown:false}}
+  />
+
 </Stack.Navigator>
  )
 }

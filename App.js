@@ -1,17 +1,24 @@
 import React from 'react'
-
 import Register from './src/Register'
 import OTP     from './src/OTP'
-import StudentDetails from './src/StudetDetails'
+import StudentDetails from './src/StudentDetails'
 import School_Board from './src/School_Board'
 import AppTour from './src/AppTour'
+import Home from './src/Taps/Home'
+import Recent from './src/Taps/Recent'
+import Exams from './src/Taps/Exams'
+import profile from './src/Taps/profile'
+import Contact from './src/Taps/Contact'
+import {Image} from 'react-native'
 
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
 
 const Stack = createStackNavigator()
+const Tab   = createMaterialBottomTabNavigator() 
 
 function MyStack (){
  return (
@@ -48,8 +55,133 @@ function MyStack (){
   options ={{headerShown:false}}
   />
 
+<Stack.Screen 
+  name ='Tab'
+  component={MyTab}
+  options ={{headerShown:false}}
+  />
+
+
 </Stack.Navigator>
  )
+}
+
+function MyTab(){
+  return(
+    <Tab.Navigator
+    screenOptions ={{
+      tabBarLabelStyle :{fontSize :8},
+      tabBarItemStyle  :{width:100,alignItems:'center',justifyContent:'center'},
+      tabBarStyle      :{backgroundColor:'#fff'}
+  
+  }}
+    
+    >
+      <Tab.Screen
+      name ='Home'
+      component={Home}
+      options={{tabBarIcon :()=>{
+        
+        return(
+         
+          <Image source={require('./assets/Path82.png')} style={{ width: 15, height: 16.83}} />
+         
+        
+        )
+        
+        
+       } ,
+      tabBarLabelPosition:'beside-icon',
+      tabBarActiveTintColor:'#00202F',
+      tabBarInactiveTintColor:'#C2C2C2',
+      
+     
+    
+    
+    }
+
+    }
+      />
+      <Tab.Screen
+      name ='Recent'
+      component={Recent}
+      options={{tabBarIcon :()=>{
+        return(
+         
+          
+          <Image source={require('./assets/Polygon3.png')} style={{ width: 17, height: 20}}  />
+        )
+      
+      } ,
+
+      tabBarLabelPosition:'beside-icon',
+      tabBarActiveTintColor:'#00202F',
+      tabBarInactiveTintColor:'#C2C2C2',
+     
+    
+    
+    }
+
+    }
+      />
+      <Tab.Screen
+      name ='Exams'
+      component={Exams}
+      options={{tabBarIcon :()=>{
+        return(
+          <Image source={require('./assets/Group360.png')} style={{ width: 15, height: 16.83 }} />
+        )
+      
+      } ,
+      tabBarLabelPosition:'beside-icon',
+      tabBarActiveTintColor:'#00202F',
+      tabBarInactiveTintColor:'#C2C2C2',
+     
+      
+    
+    
+    }
+
+    }
+      />
+      <Tab.Screen
+      name ='Profile'
+      component={profile}
+      options={{tabBarIcon :()=>{
+        return(
+          <Image source={require('./assets/Group363.png')} style={{ width: 18, height: 17 }} />
+        )
+      
+      } ,
+      tabBarLabelPosition:'beside-icon',
+      tabBarActiveTintColor:'#00202F',
+      tabBarInactiveTintColor:'#C2C2C2'
+    
+    
+    }
+
+    }
+      />
+      <Tab.Screen
+      name ='Contact'
+      component={Contact}
+      options={{tabBarIcon :()=>{
+        return(
+          <Image source={require('./assets/Group364.png')} style={{ width: 20, height: 16 }} />
+        )
+      
+      } ,
+      tabBarLabelPosition:'beside-icon',
+      tabBarActiveTintColor:'#00202F',
+      tabBarInactiveTintColor:'#C2C2C2'
+    
+    
+    }
+
+    }
+      />
+    </Tab.Navigator>
+  )
 }
 
 export default function App (){

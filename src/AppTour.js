@@ -18,7 +18,7 @@ export default class AppTour extends Component  {
           </Text>
       </View>
       <TouchableHighlight style={{alignItems:'center',justifyContent:'center'}}
-      onPress ={()=> console.log('clicked')}
+      onPress ={()=> this.props.navigation.navigate('Tab')}
       underlayColor ='transparent'
       >
     <View style={{backgroundColor:'#fff',borderRadius:7}}  >

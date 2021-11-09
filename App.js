@@ -9,16 +9,17 @@ import Recent from './src/Taps/Recent'
 import Exams from './src/Taps/Exams'
 import profile from './src/Taps/profile'
 import Contact from './src/Taps/Contact'
-import {Image} from 'react-native'
+import {Image, View,Text} from 'react-native'
 
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 
 import { createStackNavigator } from '@react-navigation/stack'
+import { isNullLiteralTypeAnnotation } from '@babel/types'
 
 
 const Stack = createStackNavigator()
-const Tab   = createMaterialBottomTabNavigator() 
+const Tab   = createBottomTabNavigator() 
 
 function MyStack (){
  return (
@@ -59,6 +60,7 @@ function MyStack (){
   name ='Tab'
   component={MyTab}
   options ={{headerShown:false}}
+ 
   />
 
 
@@ -70,31 +72,71 @@ function MyTab(){
   return(
     <Tab.Navigator
     screenOptions ={{
+      
       tabBarLabelStyle :{fontSize :8},
       tabBarItemStyle  :{width:100,alignItems:'center',justifyContent:'center'},
-      tabBarStyle      :{backgroundColor:'#fff'}
+      tabBarStyle:{
+        backgroundColor:'#fff',
+        position:'absolute',
+        bottom:131,
+        marginHorizontal:20,
+        borderWidth:1,
+        borderColor:'#EEEEEE',
+        height:74,
+        width:343,
+        borderRadius:8,
+        
+      },
+      tabBarShowLabel:false,
+}
+
+}
+   
+
   
-  }}
     
     >
       <Tab.Screen
       name ='Home'
       component={Home}
-      options={{tabBarIcon :()=>{
+      options={{tabBarIcon :({focused})=>{
         
         return(
+          <View style={{alignItems:'center',justifyContent:'center'}}>
+          
+   
          
+          {focused ? 
+          <View style={{justifyContent:'center',alignItems:'center'}}>
+         <Image source={require('./assets/Path82.png')} style={{ width: 15, height: 16.83}} />
+         <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
+         </View>
+          :
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',marginLeft:30}}>
           <Image source={require('./assets/Path82.png')} style={{ width: 15, height: 16.83}} />
+          <Text style={{fontSize:8,paddingLeft:10,width:35}}>Home</Text>
+          
+          </View>
+
          
+         }
+          
+         
+          </View>
         
         )
         
+      
+      
         
        } ,
+       
+      
       tabBarLabelPosition:'beside-icon',
       tabBarActiveTintColor:'#00202F',
       tabBarInactiveTintColor:'#C2C2C2',
-      
+     
+     
      
     
     
@@ -105,19 +147,35 @@ function MyTab(){
       <Tab.Screen
       name ='Recent'
       component={Recent}
-      options={{tabBarIcon :()=>{
+      options={{tabBarIcon :({focused})=>{
+        
         return(
-         
+          <View style={{alignItems:'center',justifyContent:'center'}}>
+          {focused ?
+            
+            <View style={{alignItems:'center',justifyContent:'center'}}>
+          <Image source={require('./assets/Polygon3.png')} style={{ width: 17, height: 20,}}  />
+          <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
+          </View>
+            :
           
-          <Image source={require('./assets/Polygon3.png')} style={{ width: 17, height: 20}}  />
-        )
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+            <Image source={require('./assets/Polygon3.png')} style={{ width: 17, height: 20}}  />
+          <Text style={{fontSize:8,paddingLeft:10,width:35,paddingTop:10}}>Recent</Text>
+          </View>
+          
+          
+        }
+        </View>
+      
+      )
       
       } ,
 
       tabBarLabelPosition:'beside-icon',
       tabBarActiveTintColor:'#00202F',
       tabBarInactiveTintColor:'#C2C2C2',
-     
+      
     
     
     }
@@ -127,10 +185,28 @@ function MyTab(){
       <Tab.Screen
       name ='Exams'
       component={Exams}
-      options={{tabBarIcon :()=>{
+      options={{tabBarIcon :({focused})=>{
+        
         return(
-          <Image source={require('./assets/Group360.png')} style={{ width: 15, height: 16.83 }} />
-        )
+          <View style={{alignItems:'center',justifyContent:'center'}}>
+          {focused ?
+            
+            <View style={{alignItems:'center',justifyContent:'center'}}>
+          <Image source={require('./assets/Group360.png')} style={{ width: 16, height: 18}}  />
+          <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
+          </View>
+            :
+          
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+            <Image source={require('./assets/Group360.png')} style={{ width: 16, height: 18}}  />
+          <Text style={{fontSize:8,paddingLeft:10,width:35}}>Exams</Text>
+          </View>
+          
+          
+        }
+        </View>
+      
+      )
       
       } ,
       tabBarLabelPosition:'beside-icon',
@@ -147,10 +223,28 @@ function MyTab(){
       <Tab.Screen
       name ='Profile'
       component={profile}
-      options={{tabBarIcon :()=>{
+      options={{tabBarIcon :({focused})=>{
+        
         return(
-          <Image source={require('./assets/Group363.png')} style={{ width: 18, height: 17 }} />
-        )
+          <View style={{alignItems:'center',justifyContent:'center'}}>
+          {focused ?
+            
+            <View style={{alignItems:'center',justifyContent:'center'}}>
+          <Image source={require('./assets/Group363.png')} style={{ width: 18, height: 17,}}  />
+          <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
+          </View>
+            :
+          
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+            <Image source={require('./assets/Group363.png')} style={{ width: 18, height: 17}}  />
+          <Text style={{fontSize:8,paddingLeft:10,width:35}}>Profile</Text>
+          </View>
+          
+          
+        }
+        </View>
+      
+      )
       
       } ,
       tabBarLabelPosition:'beside-icon',
@@ -165,10 +259,28 @@ function MyTab(){
       <Tab.Screen
       name ='Contact'
       component={Contact}
-      options={{tabBarIcon :()=>{
+      options={{tabBarIcon :({focused})=>{
+        
         return(
-          <Image source={require('./assets/Group364.png')} style={{ width: 20, height: 16 }} />
-        )
+          <View style={{alignItems:'center',justifyContent:'center'}}>
+          {focused ?
+            
+            <View style={{alignItems:'center',justifyContent:'center'}}>
+          <Image source={require('./assets/Group364.png')} style={{ width: 20, height: 16}}  />
+          <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
+          </View>
+            :
+          
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+            <Image source={require('./assets/Group364.png')} style={{ width: 20, height: 16}}  />
+          <Text style={{fontSize:8,paddingLeft:10,width:35}}>Profile</Text>
+          </View>
+          
+          
+        }
+        </View>
+      
+      )
       
       } ,
       tabBarLabelPosition:'beside-icon',

@@ -78,8 +78,8 @@ function MyTab(){
       tabBarStyle:{
         backgroundColor:'#fff',
         position:'absolute',
-        bottom:131,
-        marginHorizontal:20,
+        bottom:100,
+        marginHorizontal:10,
         borderWidth:1,
         borderColor:'#EEEEEE',
         height:74,

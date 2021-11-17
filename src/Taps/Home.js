@@ -9,7 +9,12 @@ export default class home extends Component  {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={{backgroundColor:'#F9F9F9',height:241,width:'100%'}}>
         <View style={{alignItems:'center',height:80,margin:10,borderBottomColor:'#eee',borderBottomWidth:1,flexDirection:'row'}}>
-          <View style={{borderColor:'#D5D5D5',borderRadius:4,height:32,width:32,borderWidth:1,marginLeft:30,alignItems:'center',justifyContent:'center'}}>
+          <TouchableHighlight  style={{marginLeft:30,}}
+          underlayColor='#00C458'
+          onPress={() => {
+            console.log('drower')
+          }} >
+          <View style={{borderColor:'#D5D5D5',borderRadius:4,height:32,width:32,borderWidth:1,alignItems:'center',justifyContent:'center'}}>
           <View style={{flexDirection:'row'}}> 
           <View style={{backgroundColor:'#00C458',height:4,width:4,marginRight:2,borderTopLeftRadius:1}}>
           </View>
@@ -26,10 +31,11 @@ export default class home extends Component  {
           </View>
          
           </View>
+          </TouchableHighlight>
           <View style={{backgroundColor:'#fff',marginLeft:10,height:30,alignItems:'center',justifyContent:'center',width:130}}>
           <Image source={require('./Assets/inmakeslogo.png')} style={{width:116,height:26}}  />
           </View>
-          <View    style={{marginLeft:70}}>
+          <View    style={{marginLeft:50}}>
           <View  style={{borderColor:'#00C458',borderWidth:1,borderRadius:4,width:75,height:32,flexDirection:'row',alignItems:'center',marginLeft:10}}>
           <View style={{backgroundColor:'#007345',margin:5,borderRadius:8,height:16,width:16}}></View>
           <Text style={{color:'#00C458',fontSize:10,height:13,width:35}}>classes</Text>

@@ -72,13 +72,13 @@ function MyTab(){
   return(
     <Tab.Navigator
     screenOptions ={{
-      
+     
       tabBarLabelStyle :{fontSize :8},
       tabBarItemStyle  :{width:100,alignItems:'center',justifyContent:'center'},
       tabBarStyle:{
         backgroundColor:'#fff',
         position:'absolute',
-        bottom:100,
+        bottom:30,
         marginHorizontal:10,
         borderWidth:1,
         borderColor:'#EEEEEE',
@@ -88,6 +88,7 @@ function MyTab(){
         
       },
       tabBarShowLabel:false,
+      headerShown:false
 }
 
 }
@@ -97,8 +98,10 @@ function MyTab(){
     
     >
       <Tab.Screen
+      
       name ='Home'
       component={Home}
+     
       options={{tabBarIcon :({focused})=>{
         
         return(
@@ -135,7 +138,7 @@ function MyTab(){
       tabBarLabelPosition:'beside-icon',
       tabBarActiveTintColor:'#00202F',
       tabBarInactiveTintColor:'#C2C2C2',
-     
+    
      
      
     
@@ -273,7 +276,7 @@ function MyTab(){
           
           <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
             <Image source={require('./assets/Group364.png')} style={{ width: 20, height: 16}}  />
-          <Text style={{fontSize:8,paddingLeft:10,width:35}}>Profile</Text>
+          <Text style={{fontSize:8,paddingLeft:10,width:38}}>Contact</Text>
           </View>
           
           
@@ -299,6 +302,7 @@ function MyTab(){
 export default function App (){
 return (
   <NavigationContainer>
+  
   <MyStack/>
 </NavigationContainer>
 )

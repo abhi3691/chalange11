@@ -6,9 +6,9 @@ export default class home extends Component  {
   render(){ 
   return (
     
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={{backgroundColor:'#F9F9F9',height:241,width:'100%'}}>
-        <View style={{justifyContent:'center',height:80,margin:10,borderBottomColor:'#eee',borderBottomWidth:1}}>
+        <View style={{alignItems:'center',height:80,margin:10,borderBottomColor:'#eee',borderBottomWidth:1,flexDirection:'row'}}>
           <View style={{borderColor:'#D5D5D5',borderRadius:4,height:32,width:32,borderWidth:1,marginLeft:30,alignItems:'center',justifyContent:'center'}}>
           <View style={{flexDirection:'row'}}> 
           <View style={{backgroundColor:'#00C458',height:4,width:4,marginRight:2,borderTopLeftRadius:1}}>
@@ -20,7 +20,19 @@ export default class home extends Component  {
           <View style={{backgroundColor:'#00C458',height:4,width:4,marginRight:2,borderBottomLeftRadius:1}}>
           </View>
           <View style={{backgroundColor:'#00C458',height:4,width:4,borderBottomRightRadius:1}}>
+         
           </View>
+          
+          </View>
+         
+          </View>
+          <View style={{backgroundColor:'#fff',marginLeft:10,height:30,alignItems:'center',justifyContent:'center',width:130}}>
+          <Image source={require('./Assets/inmakeslogo.png')} style={{width:116,height:26}}  />
+          </View>
+          <View    style={{marginLeft:70}}>
+          <View  style={{borderColor:'#00C458',borderWidth:1,borderRadius:4,width:75,height:32,flexDirection:'row',alignItems:'center',marginLeft:10}}>
+          <View style={{backgroundColor:'#007345',margin:5,borderRadius:8,height:16,width:16}}></View>
+          <Text style={{color:'#00C458',fontSize:10,height:13,width:35}}>classes</Text>
           </View>
           </View>
         </View>
@@ -50,24 +62,24 @@ export default class home extends Component  {
           underlayColor ='#00C458'
           >
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:92,height:39,flexDirection:'row',alignItems:'center'}}>
-          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:10,height:23,width:20}}></View>
+          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>
             <Text style={{color:'#002333',fontSize:12}}>Biology</Text>
           </View>
           </TouchableHighlight>
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:91,height:39,flexDirection:'row',alignItems:'center',marginLeft:10}}>
-          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:10,height:23,width:20}}></View>
+          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>
             <Text style={{color:'#002333',fontSize:12}}>Physics</Text>
           </View>
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:107,height:39,flexDirection:'row',alignItems:'center',marginLeft:10}}>
-          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:10,height:23,width:20}}></View>
+          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>
             <Text style={{color:'#002333',fontSize:12}}>Chemistry</Text>
           </View>
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:92,height:39,flexDirection:'row',alignItems:'center',marginLeft:10}}>
-          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:10,height:23,width:20}}></View>
+          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>
             <Text style={{color:'#002333',fontSize:12}}>Maths</Text>
           </View>
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:92,height:39,flexDirection:'row',alignItems:'center',marginLeft:10}}>
-          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:10,height:23,width:20}}></View>
+          <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>
             <Text style={{color:'#002333',fontSize:12}}>English</Text>
           </View>
         </ScrollView>

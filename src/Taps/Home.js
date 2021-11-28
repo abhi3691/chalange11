@@ -11,9 +11,7 @@ export default class home extends Component  {
         <View style={{alignItems:'center',height:80,margin:10,borderBottomColor:'#eee',borderBottomWidth:1,flexDirection:'row'}}>
           <TouchableHighlight  style={{marginLeft:30,}}
           underlayColor='#00C458'
-          onPress={() => {
-            console.log('drower')
-          }} >
+          onPress={() => this.props.navigation.navigate('Drawer')} >
           <View style={{borderColor:'#D5D5D5',borderRadius:4,height:32,width:32,borderWidth:1,alignItems:'center',justifyContent:'center'}}>
           <View style={{flexDirection:'row'}}> 
           <View style={{backgroundColor:'#00C458',height:4,width:4,marginRight:2,borderTopLeftRadius:1}}>

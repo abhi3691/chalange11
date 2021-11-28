@@ -15,11 +15,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 
 import { createStackNavigator } from '@react-navigation/stack'
-import { isNullLiteralTypeAnnotation } from '@babel/types'
+import {createDrawerNavigator} from '@react-navigation/drawer'
+import home from './src/Taps/Home'
 
 
 const Stack = createStackNavigator()
 const Tab   = createBottomTabNavigator() 
+const Drawer = createDrawerNavigator() 
 
 function MyStack (){
  return (
@@ -63,7 +65,13 @@ function MyStack (){
  
   />
 
-
+<Stack.Screen 
+  name ='Drawer'
+  component={MyDrawer}
+  
+  options ={{headerShown:false,}}
+ 
+  />
 </Stack.Navigator>
  )
 }
@@ -296,6 +304,28 @@ function MyTab(){
     }
       />
     </Tab.Navigator>
+  )
+}
+
+function MyDrawer(){
+  return(
+    <Drawer.Navigator
+    screenOptions ={{
+      headerShown:false
+      
+    }}
+    >
+      <Drawer.Screen
+      name ='Tab'
+      component={MyTab}
+      />
+      <Drawer.Screen
+      name ='Exam Corner'
+      component={Exams}
+      />
+
+
+    </Drawer.Navigator>
   )
 }
 

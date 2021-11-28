@@ -61,9 +61,9 @@ export default class home extends Component  {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <TouchableHighlight onPress={()=> {
            
-            console.log('Biology');
+           this.props.navigation.navigate('Course')
           }}
-          underlayColor ='#00C458'
+          underlayColor ='transparent'
           >
           <View  style={{borderColor:'#002333',borderWidth:1,borderRadius:8,width:92,height:39,flexDirection:'row',alignItems:'center'}}>
           <View style={{backgroundColor:'#00C458',margin:10,borderRadius:11.5,height:23,width:23}}></View>

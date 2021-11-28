@@ -66,7 +66,7 @@ export default class School_Board extends Component  {
         </View>
         </View>
         
-        <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'35%'}}>
+        <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'40%'}}>
         <View style={styles.rectangle1}>
             <View style={styles.mobileNoStyle} >
                

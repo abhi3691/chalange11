@@ -33,14 +33,14 @@ export default class StudentDetails extends Component  {
   return (
       
     <View style={styles.container}>
-        <View style={{height:'10%',alignItems:'center',justifyContent:'center',marginTop:30}}>
+        <View style={{height:'8%',alignItems:'center',justifyContent:'center',marginTop:30}}>
         <Image source ={require('../assets/inmakeslogo.png')}  style={styles.ImageStyle} />
         </View>
-        <View style={{height:'20%',alignItems:'center',justifyContent:'flex-start'}}>
+        <View style={{height:'16%',alignItems:'center',justifyContent:'flex-start'}}>
         <View style={{backgroundColor:'#eee',width:150,height:150,borderRadius:100}} >
             
            
-        <ImageBackground source ={require('../assets/Group385.png')}  style={{alignItems:'center',justifyContent:'center',height:150,width:150,}} >
+        <ImageBackground source ={require('../assets/Group385.png')}  style={{alignItems:'center',justifyContent:'center',height:140,width:140,}} >
             <Text style={{fontSize:18,fontWeight:'600',color:'#000'}} >ICON</Text>
         </ImageBackground>
             
@@ -54,7 +54,7 @@ export default class StudentDetails extends Component  {
         </View>
         </View>
         
-        <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'60%'}}>
+        <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'65%'}}>
         <View style={styles.rectangle1}>
             <View style={styles.mobileNoStyle} >
                

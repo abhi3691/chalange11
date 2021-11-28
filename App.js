@@ -9,6 +9,7 @@ import Recent from './src/Taps/Recent'
 import Exams from './src/Taps/Exams'
 import profile from './src/Taps/profile'
 import Contact from './src/Taps/Contact'
+import Course from './src/Course'
 import {Image, View,Text} from 'react-native'
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
@@ -16,7 +17,6 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import { createStackNavigator } from '@react-navigation/stack'
 import {createDrawerNavigator} from '@react-navigation/drawer'
-import home from './src/Taps/Home'
 
 
 const Stack = createStackNavigator()
@@ -72,6 +72,15 @@ function MyStack (){
   options ={{headerShown:false,}}
  
   />
+
+<Stack.Screen 
+  name ='Course'
+  component={Course}
+  
+  options ={{headerShown:false,}}
+ 
+  />
+
 </Stack.Navigator>
  )
 }

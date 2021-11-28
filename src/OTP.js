@@ -26,7 +26,7 @@ const OTP =(
         <View style={{height:'25%',alignItems:'center',justifyContent:'center',marginTop:30}}>
         <Image source ={require('../assets/inmakeslogo.png')}  style={styles.ImageStyle} />
         </View>
-        <View style={{height:'25%',alignItems:'center',justifyContent:'center'}}>
+        <View style={{height:'20%',alignItems:'center',justifyContent:'center'}}>
         <View style={{backgroundColor:'#eee',width:150,height:150,borderRadius:100,marginBottom:120}} >
             
         

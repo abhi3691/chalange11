@@ -7,8 +7,13 @@ export default class home extends Component  {
   return (
     
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+   
       <View style={{backgroundColor:'#F9F9F9',height:241,width:'100%'}}>
+      <Image source={require('./Assets/group75.png')} style={{height:'100%',width:'100%',position:'absolute',alignItems:'flex-end',right:-205,tintColor:'#002333'}}/>
+      <Image source={require('./Assets/group75.png')} style={{height:'100%',width:'100%',position:'absolute',alignItems:'flex-end',right:-205,tintColor:'#F9F9F9'}}/>  
+      <View style={{height:'100%',width:'100%',position:'absolute',alignItems:'flex-end',right:-314,tintColor:'#F9F9F9',borderColor:'#00C458',borderWidth:2,borderBottomStartRadius:55,transform:[{rotate:'53deg'}],backgroundColor:'#F9F9F9'}}></View>
         <View style={{alignItems:'center',height:80,margin:10,borderBottomColor:'#eee',borderBottomWidth:1,flexDirection:'row'}}>
+       
           <TouchableHighlight  style={{marginLeft:30,}}
           underlayColor='#00C458'
           onPress={() => this.props.navigation.navigate('Drawer')} >
@@ -43,6 +48,7 @@ export default class home extends Component  {
        <View style={{margin:30}}>
        <Text style={{color:'#002333',fontSize:12,fontWeight:'600'}}>Goodmorning</Text>
        <Text style={{color:'#002333',fontSize:24,fontWeight:'bold',fontFamily:'Gilroy'}}>Aaron Taylor</Text>
+       
        </View>
        
       </View>
@@ -52,12 +58,17 @@ export default class home extends Component  {
              <View style={{width:'85%'}}>
            <Text style={{color:'#BAC3C7',fontSize:12,paddingLeft:30,paddingTop:10}}>Class</Text>
            <Text style={{color:'#FFFFFF',fontSize:14,paddingLeft:30}}>Plus two science</Text>
+          
            </View>
+          
            <Image source={require('./Assets/Path7.png')} style={{height:7,width:14,tintColor:'#FFFFFF',marginTop:10}} />
            </View>
          </ImageBackground>
+        
         </View>
-      <View style={{flexDirection:'row',margin:20,marginTop:70}}>
+                          
+       
+      <View style={{flexDirection:'row',marginLeft:20,marginTop:70,marginBottom:20}}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <TouchableHighlight onPress={()=> {
            

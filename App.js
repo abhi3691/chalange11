@@ -133,7 +133,7 @@ function MyTab(){
          </View>
           :
           <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',marginLeft:30}}>
-          <Image source={require('./assets/Path82.png')} style={{ width: 15, height: 16.83}} />
+          <Image source={require('./assets/Group362.png')} style={{ width: 15, height: 16.83}} />
           <Text style={{fontSize:8,paddingLeft:10,width:35}}>Home</Text>
           
           </View>
@@ -250,7 +250,7 @@ function MyTab(){
           {focused ?
             
             <View style={{alignItems:'center',justifyContent:'center'}}>
-          <Image source={require('./assets/Group363.png')} style={{ width: 18, height: 17,}}  />
+          <Image source={require('./assets/Group358.png')} style={{ width: 18, height: 17,}}  />
           <Image source={require('./assets/Ellipse22.png')} style={{marginTop:3, width: 4, height: 4}} />
           </View>
             :
